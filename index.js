@@ -13,7 +13,7 @@ function findByDomain(services, domain) {
 
 function sanitize(servicesConfig) {
 	var sanitized = {};
-	for (var service in servicesConfig.servies) {
+	for (var service in servicesConfig.services) {
 		if (servicesConfig.sevices.hasOwnProperty(service)) {
 			sanitized[service] = {
 				domain: servicesConfig.services[service].domain,
@@ -38,7 +38,8 @@ function get(env) {
 	return {
 		services: services,
 		cert: cert,
-		findByDomain: function(domain) { return findByDomain(services, domain); }
+		findByDomain: function(domain) { return findByDomain(services, domain); },
+		sanitize: sanitize
 	};
 }
 
