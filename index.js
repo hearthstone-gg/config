@@ -21,7 +21,11 @@ function sanitize(servicesConfig) {
 			};
 		}
 	}
-	console.log(sanitized);
+	delete sanitized.cert;
+	delete sanitized.key;
+	delete sanitized.port;
+	delete sanitized.httpsPort;
+
 	return sanitized;
 }
 
