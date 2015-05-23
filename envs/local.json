@@ -4,9 +4,7 @@
 		"serviceAddress": "http://localhost:3002",
 		"name": "auth",
 		"https": true,
-		"redirectTo": "https://localhost:3004",
-		"cert": "localhost.cert",
-		"key": "localhost.key"
+		"redirectTo": "https://localhost:3004"
 	},
 	"api": {
 		"domain": "local-api.hearthstone.gg",
@@ -23,5 +21,7 @@
 		"domain": "local-app.hearthstone.gg",
 		"serviceAddress": "http://localhost:3001",
 		"name": "app"
-	}
+	},
+	"cert": "localhost.cert",
+	"key": "localhost.key"
 }
