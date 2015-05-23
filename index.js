@@ -13,11 +13,11 @@ function findByDomain(services, domain) {
 
 function sanitize(servicesConfig) {
 	var sanitized = {};
-	for (var service in servicesConfig) {
-		if (servicesConfig.hasOwnProperty(service)) {
+	for (var service in servicesConfig.servies) {
+		if (servicesConfig.sevices.hasOwnProperty(service)) {
 			sanitized[service] = {
-				domain: servicesConfig[service].domain,
-				name: servicesConfig[service].name
+				domain: servicesConfig.services[service].domain,
+				name: servicesConfig.services[service].name
 			};
 		}
 	}
