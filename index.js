@@ -11,6 +11,19 @@ function findByDomain(services, domain) {
 	return false;
 }
 
+function sanitize(servicesConfig) {
+	var sanitized = {};
+	for (var service in servicesConfig) {
+		if (servicesConfig.hasOwnProperty(service)) {
+			sanitized[service] = {
+				domain: servicesConfig[service].domain,
+				name: servicesConfig[service].name
+			};
+		}
+	}
+	return sanitized;
+}
+
 function get(env) {
 	if (!env) { env = 'local'; }
 
@@ -29,5 +42,6 @@ function get(env) {
 }
 
 module.exports = {
-	get: get
+	get: get,
+	sanitize: sanitize
 };
