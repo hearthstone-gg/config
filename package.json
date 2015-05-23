@@ -1,0 +1,11 @@
+{
+  "name": "hs.gg-config",
+  "version": "0.0.0",
+  "description": "config for all hearthstone.gg services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause"
+}
