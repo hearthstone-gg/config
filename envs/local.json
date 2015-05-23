@@ -24,6 +24,6 @@
 	},
 	"cert": "localhost.cert",
 	"key": "localhost.key",
-	"port": 40,
+	"port": 80,
 	"httpsPort": 443
 }
