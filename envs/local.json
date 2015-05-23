@@ -4,23 +4,28 @@
 		"serviceAddress": "http://localhost:3002",
 		"name": "auth",
 		"https": true,
-		"redirectTo": "https://localhost:3004"
+		"redirectTo": "https://localhost:3004",
+		"port": 3002,
+		"httpsPort": 3004
 	},
 	"api": {
 		"domain": "local-api.hearthstone.gg",
 		"serviceAddress": "http://localhost:3000",
-		"name": "api"
+		"name": "api",
+		"port": 3000
 	},
 	"socket": {
 		"domain": "local-socket.hearthstone.gg",
 		"serviceAddress": "http://localhost:3003",
 		"name": "socket",
-		"proxySocket": true
+		"proxySocket": true,
+		"port": 3003
 	},
 	"app": {
 		"domain": "local-app.hearthstone.gg",
 		"serviceAddress": "http://localhost:3001",
-		"name": "app"
+		"name": "app",
+		"port": 3001
 	},
 	"cert": "localhost.cert",
 	"key": "localhost.key",
