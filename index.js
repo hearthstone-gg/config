@@ -14,7 +14,7 @@ function findByDomain(services, domain) {
 function sanitize(servicesConfig) {
 	var sanitized = {};
 	for (var service in servicesConfig.services) {
-		if (servicesConfig.sevices.hasOwnProperty(service)) {
+		if (servicesConfig.services.hasOwnProperty(service)) {
 			sanitized[service] = {
 				domain: servicesConfig.services[service].domain,
 				name: servicesConfig.services[service].name
