@@ -14,7 +14,7 @@ function findByDomain(services, domain) {
 function get(env) {
 	if (!env) { env = 'local'; }
 
-	var services = require('./env/' + env);
+	var services = require('./env/' + env + ".json");
 
 	var cert = {
 		key: fs.readFileSync(path.join(__dirname, './sslcert/' + services.key), 'utf8'),
