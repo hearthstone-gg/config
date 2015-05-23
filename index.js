@@ -21,6 +21,7 @@ function sanitize(servicesConfig) {
 			};
 		}
 	}
+	console.log(sanitized);
 	return sanitized;
 }
 
