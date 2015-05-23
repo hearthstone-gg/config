@@ -23,5 +23,7 @@
 		"name": "app"
 	},
 	"cert": "localhost.cert",
-	"key": "localhost.key"
+	"key": "localhost.key",
+	"port": 40,
+	"httpsPort": 443
 }
