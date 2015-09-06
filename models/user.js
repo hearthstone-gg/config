@@ -9,7 +9,12 @@ function UserModel(mongoose) {
 			token: String,
 			name: String
 		},
-		token: String
+		token: String,
+		created: {
+            type: Date,
+            default: Date.now
+        },
+		updated: Date
 	});
 
 	userSchema.methods.getDisplayName = function() {
@@ -20,13 +25,20 @@ function UserModel(mongoose) {
 		return name.toLowerCase();
 	};
 
-	userSchema.methods.generateToken = function(cb){
+	userSchema.methods.generateToken = function(cb) {
 		//TODO use bnet token in hash
 		this.token = uuid.v4();
 		this.save(function() {
-			if (cb) { cb(); }
+			if (cb) {
+				cb();
+			}
 		});
 	};
+
+	userSchema.pre('save', function(done) {
+		this.updated = new Date();
+		done();
+	});
 
 	return mongoose.model('User', userSchema);
 }
