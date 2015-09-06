@@ -33,6 +33,7 @@ function get(env) {
 	if (!env) { env = 'local'; }
 
 	var services = require('./envs/' + env + ".json");
+	services.models = require('./models');
 
 	var cert = {
 		key: fs.readFileSync(path.join(__dirname, './sslcert/' + services.key), 'utf8'),

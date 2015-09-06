@@ -1,3 +1,4 @@
+node_modules
 envs/prod.json
 sslcert/prod.cert
 sslcert/prod.key
