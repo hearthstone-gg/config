@@ -8,7 +8,9 @@ function GameModel(mongoose) {
             type: Date,
             default: Date.now
         },
-		updated: Date
+		updated: Date,
+		name: String,
+		opponentName: String
 	});
 
 	gameSchema.pre('save', function(done) {
