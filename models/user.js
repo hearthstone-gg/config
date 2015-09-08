@@ -1,4 +1,5 @@
 var uuid = require('node-uuid');
+var elo = require('arpad');
 
 function UserModel(mongoose) {
 	var Schema = mongoose.Schema;
@@ -14,7 +15,11 @@ function UserModel(mongoose) {
             type: Date,
             default: Date.now
         },
-		updated: Date
+		updated: Date,
+		elo: {
+			type: Number,
+			default: 1600
+		}
 	});
 
 	userSchema.methods.getDisplayName = function() {
@@ -35,12 +40,32 @@ function UserModel(mongoose) {
 		});
 	};
 
+	userSchema.methods.eloUpdate = function(status, opponentRating, cb) {
+		var elo = new Elo();
+		switch(status) {
+			case 'WIN':
+				this.elo = newRatingIfWon(this.elo, opponentRating);
+				break;
+			case 'LOSS':
+				this.elo = newRatingIfLost(this.elo, opponentRating);
+				break;
+			case 'TIE':
+				this.elo = newRatingIfTied(this.elo, opponentRating);
+				break;
+		}
+		this.save(function() {
+			if (cb) {
+				cb();
+			}
+		});
+	};
+
 	userSchema.pre('save', function(done) {
 		this.updated = new Date();
 		done();
 	});
 
-	return mongoose.model('User', userSchema);
+	return userSchema;
 }
 
 module.exports = UserModel;

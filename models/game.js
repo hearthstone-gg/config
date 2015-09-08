@@ -10,7 +10,11 @@ function GameModel(mongoose) {
         },
 		updated: Date,
 		name: String,
-		opponentName: String
+		opponentName: String,
+		processed: {
+			type: Boolean,
+			default: false
+		}
 	});
 
 	gameSchema.pre('save', function(done) {
@@ -18,7 +22,7 @@ function GameModel(mongoose) {
 		done();
 	});
 
-	return mongoose.model('Game', gameSchema);
+	return gameSchema;
 }
 
 module.exports = GameModel;
