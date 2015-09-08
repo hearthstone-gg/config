@@ -12,7 +12,9 @@
 		"domain": "local-api.hearthstone.gg",
 		"serviceAddress": "http://localhost:3000",
 		"name": "api",
-		"port": 3000
+		"port": 3000,
+		"adminUser": "admin",
+		"adminPass": "pass"
 	},
 	"socket": {
 		"domain": "local-socket.hearthstone.gg",
