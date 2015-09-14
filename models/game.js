@@ -11,6 +11,8 @@ function GameModel(mongoose) {
 		updated: Date,
 		name: String,
 		opponentName: String,
+		playerClass: String,
+		opponentClass: String,
 		processed: {
 			type: Boolean,
 			default: false
